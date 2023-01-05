@@ -1,1 +1,16 @@
-<div id="root"></div>
+<my-table title="My title" id="myTable">
+  <div>Slot content</div>
+</my-table>
+<button id="titleChange">Change title</button>
+<button id="clear">Clear</button>
+<script>
+  const table = document.getElementById('myTable');
+  table.data = [10, 20, 30, 40];
+  document.getElementById('titleChange').addEventListener('click', () => {
+    table.title = 'New title';
+  });
+  document.getElementById('clear').addEventListener('click', () => {
+    table.clear();
+  });
+  table.addEventListener('myEvent', () => console.log('My event'));
+</script>
